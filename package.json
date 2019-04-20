@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "phi-launchpad": "^0.9.11"
+    "isomorphic-ws": "^4.0.1",
+    "node-gyp": "^3.8.0",
+    "phi-launchpad": "^0.9.11",
+    "websocket": "^1.0.28",
+    "ws": "^6.2.1"
   }
 }
