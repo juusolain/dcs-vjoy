@@ -78,6 +78,7 @@ rl.on('line', (input)=>{
   if(input == "fa18"){
     console.log("Set mode: "+input);
     currentMode = "fa18";
+    //TODO: LED_grid: take from previous version
   }else if(input == "f14rio"){
     console.log("Set mode: "+input);
     currentMode = "f14rio";
