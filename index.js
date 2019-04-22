@@ -8,17 +8,20 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-ws = new WebSocket('ws://localhost:40000');
+ws = new WebSocket('ws://localhost:35000');
 var plaunchpad = require('phi-launchpad');
-var nodeMIDI = require('./node_midi_interface.js')
+var nodeMidiInt_in = require('./node_midi_interface_in.js')
+var nodeMidiInt_out = require('./node_midi_interface_out.js')
 
-var midiDev = new nodeMIDI.midi();
+
+devIn = new nodeMidiInt_in.midi();
+devOut = new nodeMidiInt_out.midi();
 
 var lpadIn = new plaunchpad.input();
-lpadIn.init(midiDev);
+lpadIn.init(devIn);
 
 var lpadOut = new plaunchpad.output();
-lpadOut.init(midiDev);
+lpadOut.init(devOut);
 
 ws.onopen = function() {
   console.log('WebSocket connection opened');
@@ -41,7 +44,7 @@ lpadIn.on('press', (row, col)=>{
   let id = col + (row-1)*8 + 1;
   if(row == 1 && col == 0){
     if(selectedModifier == 1){
-      selectedModifier == 0;
+      selectedModifier = 0;
       lpadOut.setLed(1,0, [3,3]);
       lpadOut.setLed(1,1, [3,3]);
     }else{
@@ -51,7 +54,7 @@ lpadIn.on('press', (row, col)=>{
     }
   }else if(row == 1 && col == 1){
     if(selectedModifier == 2){
-      selectedModifier == 0;
+      selectedModifier = 0;
       lpadOut.setLed(1,0, [3,3]);
       lpadOut.setLed(1,1, [3,3]);
     }else{
@@ -60,7 +63,7 @@ lpadIn.on('press', (row, col)=>{
       lpadOut.setLed(1,0, [3,3]);
     }
   }
-  console.log(id);
+  console.log(selectedModifier);
   if(id >= 0 && id <= 64){
     pressButton(id);
   }
@@ -68,20 +71,83 @@ lpadIn.on('press', (row, col)=>{
 
 lpadIn.on('release', (row, col)=>{
   let id = col + (row-1)*8 + 1;
-  console.log(id);
   if(id >= 0 && id <= 64){
     releaseButton(id);
   }
 })
 
 rl.on('line', (input)=>{
+  lpadOut.resetDevice();
+  if(selectedModifier == 1){
+    lpadOut.setLed(1,0, [3,0]);
+    lpadOut.setLed(1,1, [3,3]);
+  }else if(selectedModifier == 2){
+    lpadOut.setLed(1,0, [3,3]);
+    lpadOut.setLed(1,1, [3,0]);
+  }else{
+    lpadOut.setLed(1,1, [3,3]);
+    lpadOut.setLed(1,0, [3,3]);
+  }
   if(input == "fa18"){
     console.log("Set mode: "+input);
     currentMode = "fa18";
-    //TODO: LED_grid: take from previous version
+    for (let i = 0; i < 5; i++){
+      lpadOut.setLed(1, 2+i, [0, 3]);
+    }
+
+    for (let i = 0; i < 5; i++){
+      lpadOut.setLed(2+i, 7, [0, 3]);
+    }
+
+    for (let i = 0; i < 5; i++){
+      lpadOut.setLed(2+i, 1, [0, 3]);
+    }
+
+    for (let i = 0; i < 5; i++){
+      lpadOut.setLed(7, 2+i, [0, 3]);
+    }
+
+    for (let i = 0; i < 3; i++){
+      lpadOut.setLed(2+i, 3, [3, 3]);
+      lpadOut.setLed(2+i, 4, [3, 3]);
+      lpadOut.setLed(2+i, 5, [3, 3]);
+    }
+
+    lpadOut.setLed(5, 4, [3, 3]);
+    lpadOut.setLed(5, 3, [3, 0]);
+    lpadOut.setLed(5, 5, [0, 3]);
+    for (let i = 0; i < 5; i++){
+      lpadOut.setLed(2+i, 6, [3, 0]);
+    }
+
+    for (let i = 0; i < 6; i++){
+      lpadOut.setLed(8, 0+i, [3, 3]);
+    }
+
+    lpadOut.setLed(8, 6, [3, 0]);
+    lpadOut.setLed(7, 0, [3, 1]);
+    lpadOut.setLed(7, 7, [3, 1]);
+    lpadOut.setLed(1,0, [3,3]);
+    lpadOut.setLed(1,1, [3,3]);
   }else if(input == "f14rio"){
+
     console.log("Set mode: "+input);
     currentMode = "f14rio";
+    for(let i = 0; i<4; i++){
+      lpadOut.setLed(3+i, 7, [0, 3]);
+    }
+    for(let i = 0; i<3; i++){
+      lpadOut.setLed(8, 5+i, [0, 3]);
+    }
+    for(let i = 0; i<3; i++){
+      lpadOut.setLed(8, 5+i, [0, 3]);
+    }
+    for(let i = 0; i<2; i++){
+      lpadOut.setLed(7, 5+i, [0, 3]);
+    }
+    for(let i = 0; i<2; i++){
+      lpadOut.setLed(7, 3+i, [3, 3]);
+    }
   }else if(input == "f14"){
     console.log("Set mode: "+input);
     currentMode = "f14";

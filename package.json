@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bindings": "^1.5.0",
     "isomorphic-ws": "^4.0.1",
+    "midi": "^0.9.5",
     "node-gyp": "^3.8.0",
     "phi-launchpad": "^0.9.11",
     "websocket": "^1.0.28",
