@@ -1,6 +1,8 @@
 const WebSocket = require("isomorphic-ws")
 var currentMode = "none";
 var selectedModifier = 0; //0 = none, 1 = left, 2 = right
+var modifier1 = false;
+var modifier2 = false;
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -40,24 +42,20 @@ function releaseButton(buttonID){
 lpadIn.on('press', (row, col)=>{
   let id = col + (row-1)*8 + 1;
   if(row == 1 && col == 0){
-    if(selectedModifier == 1){
-      selectedModifier == 0;
+    if(modifier1){
+      modifier1 = false;
       lpadOut.setLed(1,0, [3,3]);
-      lpadOut.setLed(1,1, [3,3]);
     }else{
-      selectedModifier = 1;
+      modifier1 = true;
       lpadOut.setLed(1,0, [0,3]);
-      lpadOut.setLed(1,1, [3,3]);
     }
   }else if(row == 1 && col == 1){
-    if(selectedModifier == 2){
-      selectedModifier == 0;
-      lpadOut.setLed(1,0, [3,3]);
+    if(modifier2){
+      modifier2 = false;
       lpadOut.setLed(1,1, [3,3]);
     }else{
-      selectedModifier = 2;
+      modifier2 = true;
       lpadOut.setLed(1,1, [0,3]);
-      lpadOut.setLed(1,0, [3,3]);
     }
   }
   console.log(id);
