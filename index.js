@@ -61,7 +61,6 @@ lpadIn.on('press', (row, col)=>{
       lpadOut.setLed(1,1, [0,3]);
     }
   }
-  console.log(selectedModifier);
   if(id >= 0 && id <= 64){
     pressButton(id);
   }
