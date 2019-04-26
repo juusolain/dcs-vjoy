@@ -86,6 +86,11 @@ rl.on('line', (input)=>{
     lpadOut.setLed(1,1, [3,3]);
     lpadOut.setLed(1,0, [3,3]);
   }
+  let splitString = input.split()
+  if(splitString[0] == "press"){
+    pressButton(id);
+    setTimeout(releaseButton(id), 300);
+  }
   if(input == "fa18"){
     console.log("Set mode: "+input);
     currentMode = "fa18";
