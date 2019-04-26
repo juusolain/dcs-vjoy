@@ -88,8 +88,8 @@ rl.on('line', (input)=>{
   }
   let splitString = input.split()
   if(splitString[0] == "press"){
-    pressButton(id);
-    setTimeout(releaseButton(id), 300);
+    pressButton(splitString[1]);
+    setTimeout(releaseButton(splitString[1]), 300);
   }
   if(input == "fa18"){
     console.log("Set mode: "+input);
