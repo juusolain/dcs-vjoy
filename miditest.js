@@ -38,3 +38,15 @@ input.openPort(0);
 // you should use
 // input.ignoreTypes(true, false, true)
 input.ignoreTypes(false, false, false);
+
+
+process.on('exit', (code) => {
+  console.log("Exiting");
+  output.closePort();
+  input.closePort();
+});
+
+process.on('SIGINT', function() {
+    console.log("Caught interrupt signal");
+    process.exit(0);
+});

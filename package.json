@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bindings": "^1.5.0",
+    "csv-parse": "^4.6.5",
     "isomorphic-ws": "^4.0.1",
     "launchpad-mini": "^2.2.0",
     "midi": "^0.9.5",
