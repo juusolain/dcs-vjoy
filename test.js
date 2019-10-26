@@ -1,6 +1,10 @@
-var midiConnector = require('midi-launchpad').connect(1);
+const Launchpad = require( 'launchpad-mini' ),
+      pad = new Launchpad();
 
-// wait for the connector to be ready
-midiConnector.on("ready",function(launchpad) {
-  console.log("Launchpad ready, let's do something");
-});
+pad.connect(0,1).then( () => {     // Auto-detect Launchpad
+    pad.reset( 2 );             // Make Launchpad glow yellow
+    pad.on( 'key', k => {
+        // Make button red while pressed, green after pressing
+        pad.col( k.pressed ? pad.red : pad.green, k );
+    } );
+} );
