@@ -4,16 +4,16 @@ const midi = require('midi');
 const output = new midi.output();
 
 // Count the available output ports.
-output.getPortCount();
+console.log(output.getPortCount());
 
 // Get the name of a specified output port.
-output.getPortName(0);
+console.log(output.getPortName(1));
 
 // Set up a new output.
 const input = new midi.input();
 
 // Count the available output ports.
-input.getPortCount();
+console.log(input.getPortCount());
 
 // Get the name of a specified output port.
-input.getPortName(0);
+console.log(input.getPortName(0));

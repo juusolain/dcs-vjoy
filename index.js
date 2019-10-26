@@ -14,7 +14,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-pad.connect(0,0).then( () => {     // Auto-detect Launchpad
+pad.connect(0,1).then( () => {     // Auto-detect Launchpad
     console.log("Launchpad connected");
     pad.reset(2);             // Make Launchpad glow yellow
     pad.on( 'key', k => {
