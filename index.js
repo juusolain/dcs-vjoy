@@ -16,7 +16,6 @@ fs.readdir("pages/", function(err, filenames) {
         if (!err) {
             var pageMap = new Map();
             var rows = content.split(/\r?\n/);
-            console.log(rows);
             for (var i = 0; i < 8; i++) {
               var values = rows[i].split(";");
               for (var j = 0; j < 8; j++) {
@@ -24,7 +23,6 @@ fs.readdir("pages/", function(err, filenames) {
               }
             }
             pages.set(filename.split(".")[0], pageMap);
-            console.log(pageMap);
         }else{
           console.log(err);
         }
@@ -63,24 +61,20 @@ console.log("vJoy enabled");
 
 function pressButton(x,y){
   let buttonID=xytoID(x,y);
-  console.log("Buttonpress: "+buttonID);
   if(buttonID === 1){
     setPage(1);
   }else if(buttonID === 2){
     setPage(2);
   }else{
-    buttonID = buttonID + (currentPage*64);
-    console.log("Button_page: "+buttonID);
+    buttonID = buttonID + ((currentPage-1)*64);
     device.buttons[buttonID].set(true);
   }
 }
 
 function releaseButton(x,y){
   let buttonID=xytoID(x,y);
-  console.log("Buttonrel: "+buttonID);
   if(buttonID !== 1 && buttonID !== 2){
-    buttonID = buttonID + (currentPage*64);
-    console.log("Button_page: "+buttonID);
+    buttonID = buttonID + ((currentPage-1)*64);
     device.buttons[buttonID].set(false);
   }
 
@@ -123,7 +117,6 @@ function render(mode, page){
     pad.reset(0);
     for (let item of pages.get(mapname)) {
       let loc = IDtoxy(item[0]);
-      console.log(loc);
       let col = item[1];
       let lcolor;
       if(col == "r"){
