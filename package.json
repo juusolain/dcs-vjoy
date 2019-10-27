@@ -11,6 +11,7 @@
   "dependencies": {
     "bindings": "^1.5.0",
     "csv-parse": "^4.6.5",
+    "dcs-bios-api": "0.0.10",
     "isomorphic-ws": "^4.0.1",
     "launchpad-mini": "^2.2.0",
     "midi": "^0.9.5",

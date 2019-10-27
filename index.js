@@ -94,7 +94,7 @@ function IDtoxy(id){
 
 function renderSingle(loc, mode, page){
     let mapname = mode+"_"+page;
-    console.log("Rendering singles: "+mapname)
+    console.log("Rendering single: "+mapname)
     if(pages.get(mapname)){
       pad.reset(0);
       col = pages.get(mapname).get(xytoID(loc[0], loc[1]));
@@ -112,7 +112,6 @@ function renderSingle(loc, mode, page){
 
 function render(mode, page){
   let mapname = mode+"_"+page;
-  console.log("Rendering: "+mapname)
   if(pages.get(mapname)){
     pad.reset(0);
     for (let item of pages.get(mapname)) {
@@ -144,7 +143,6 @@ function setPage(page){
 
 rl.on('line', (input)=>{
   let splitString = input.split(" ");
-  console.log(splitString);
   if(splitString[0] == "press"){
     console.log("Pressing button: "+splitString[1]);
     pressButton(splitString[1]);
