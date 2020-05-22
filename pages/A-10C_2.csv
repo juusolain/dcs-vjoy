@@ -1,0 +1,8 @@
+1;2;;;;b_EPP_APU_GEN_PWR, 0:r, 1:g;b_EPP_INVERTER, 0:a, 1:r, 2:g;
+b_FSCP_BOOST_WING_L, 0:a, 1:g;b_FSCP_BOOST_WING_R, 0:a, 1:g;;;;b_EPP_AC_GEN_PWR_L, 0:r, 1:g;b_EPP_AC_GEN_PWR_R, 0:r, 1:g;b_EPP_BATTERY_PWR, 0:r, 1:g
+b_FSCP_BOOST_MAIN_L, 0:a, 1:g;b_FSCP_BOOST_MAIN_R, 0:a, 1:g;b_FSCP_EXT_TANKS_WING, 0:a, 1:g;b_FSCP_EXT_TANKS_FUS, 0:a, 1:g;;;;
+b_SASP_YAW_SAS_L, 0:r,1:g;b_SASP_YAW_SAS_R, 0:r,1:g;b_SASP_PITCH_SAS_L, 0:r,1:g;b_SASP_PITCH_SAS_R, 0:r,1:g;;;;
+g;g;b_ENGINE_APU_START, 0:r,1:g;;;;;
+a;a;b_ENGINE_APU_START, 0:r,1:g;;;;;
+b_LASTE_EAC, 0:r,1:g;b_LASTE_RDR_ALTM, 0:r,1:g;;;;;;
+b_LASTE_EAC, 0:r,1:g;b_LASTE_RDR_ALTM, 0:r,1:g;;;;;;

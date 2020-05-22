@@ -1,0 +1,8 @@
+g;1;;;;;;
+b_MASTER_MODE_AA_LT,0:o,1:g; ;b_FLAP_SW,2:o,1:a,0:g;a;a;a;g;
+b_MASTER_MODE_AG_LT,0:o,1:g;b_GEAR_LEVER,0:g,1:r;b_FLAP_SW,2:o,1:a,0:g;a;a;a;g;
+b_MASTER_ARM_SW, 0:r, 1:g;b_CANOPY_POS,0:g,o:a,58981:r;b_ARRESTING_HOOK_LT, 0:a, 1:g;a;a;a;g;
+a;;;r;a;g;g;a
+g;b_EMERGENCY_PARKING_BRAKE_ROTATE,0:a,1:g;b_EMERGENCY_PARKING_BRAKE_PULL,1:g, 0:r;b_EMERGENCY_PARKING_BRAKE_PULL,0:g, 1:r;b_EMERGENCY_PARKING_BRAKE_ROTATE,0:g,1:a;;g;g
+r;b_PROBE_SW, 2:a, 1:g, 0:r;b_PROBE_SW, 2:a, 1:g, 0:r;;;;;r
+a;a;a;a;a;a;r;

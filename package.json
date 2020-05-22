@@ -10,14 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "bindings": "^1.5.0",
-    "csv-parse": "^4.6.5",
+    "csv-parse": "^4.8.8",
     "dcs-bios-api": "0.0.10",
     "isomorphic-ws": "^4.0.1",
     "launchpad-mini": "^2.2.0",
     "midi": "^0.9.5",
     "midi-launchpad": "^1.0.3",
     "node-gyp": "^3.8.0",
-    "vjoy": "^1.0.0",
+    "vjoy": "^1.1.0",
     "websocket": "^1.0.28",
     "ws": "^6.2.1"
   }

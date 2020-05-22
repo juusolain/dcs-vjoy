@@ -1,0 +1,7 @@
+1;2;;
+b_AHCP_MASTER_ARM, 1:r, 2:g;b_AHCP_GUNPAC, 1:r, 2:g;b_LMFD_PWR, 0:a, 2:g;b_RMFD_PWR, 0:a, 2:g
+b_AHCP_MASTER_ARM, 1:r, 2:g;b_AHCP_GUNPAC, 1:r, 2:g;b_LMFD_PWR, 0:a, 2:g;b_RMFD_PWR, 0:a, 2:g
+b_AHCP_LASER_ARM, 1:r, 2:g;b_AHCP_TGP, 0:a,1:g;;
+b_AHCP_MASTER_ARM, 1:r, 2:g;;;
+b_AHCP_CICU, 0:a, 1:g;b_AHCP_JTRS, 0:a, 1:g;b_AHCP_IFFCC, 0:a, 2:g;
+;;b_AHCP_IFFCC, 0:a, 2:g;

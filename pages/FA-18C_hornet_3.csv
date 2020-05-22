@@ -1,0 +1,6 @@
+g;g;a;a;;b_APU_READY_LT,0:r,1:g,o:o;b_BATTERY_SW,1:r,2:g,0:a;
+a;;a;b_WING_FOLD_ROTATE, 2:g, 1:a, 0:r;b_WING_FOLD_PULL, 0:g,1:a;b_WING_FOLD_ROTATE, 2:g, 1:a, 0:r;b_BATTERY_SW,1:r,2:g,0:a;
+a;;a;;;b_FLIR_SW,2:g,1:a,0:r;b_LTD_R_SW,2:g,1:a,0:r;b_LST_NFLR_SW,1:g,0:r
+b_ENGINE_CRANK_SW,0:g,o:r;b_ENGINE_CRANK_SW,1:g,o:r;b_ENGINE_CRANK_SW,2:g,o:r;;;b_FLIR_SW,2:g,1:a,0:r;b_LTD_R_SW,2:g,1:a,0:r;b_LST_NFLR_SW,1:g,0:r
+;;;;;b_RADAR_SW,2:g,1:a,0:r;;b_INS_SW,0:r,1:a,2:g,3:g,o:r
+;;;;;b_RADAR_SW,2:g,1:a,0:r;;b_INS_SW,0:r,1:a,2:a,3:g,o:a
